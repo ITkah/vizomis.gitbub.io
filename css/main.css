@@ -560,7 +560,8 @@ nav {
                 align-items: flex-start;
         width: 100%;
         -webkit-box-sizing: border-box;
-                box-sizing: border-box; } }
+                box-sizing: border-box;
+        margin-top: auto; } }
     nav .menu-2 li {
       padding: 0 37px; }
       @media (max-width: 1280px) {
