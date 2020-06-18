@@ -31,13 +31,11 @@ $(document).ready(function() {
     $(".call-nav").on("click", function(){
         $(".overflow").fadeToggle();
         $("nav").toggleClass("active-drop"); 
-        $("html,body").toggleClass("active-body");
     });
 
     $(".close-menu").on("click", function(){
         $(".overflow").hide();
         $("nav").removeClass("active-drop");
-        $("html,body").removeClass("active-body"); 
     });
 
     $(".header-search-box input").on("click", function(){
