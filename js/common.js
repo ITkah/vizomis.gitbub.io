@@ -14,10 +14,6 @@ $(document).ready(function() {
         $(".lang-hide").slideToggle(150);
     });
 
-    $(".menu-desktop").on("click", function(){
-        $(".menu-1").slideToggle(250);
-    });
-
     $(".search-call").on("click", function(){
         $(".header-search-box").toggleClass("active-drop"); 
         $("html,body").toggleClass("active-body");
