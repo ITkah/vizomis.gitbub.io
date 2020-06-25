@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $(function() {
-        menu_top = $('header').offset().top; 
+        menu_top = 10; 
         $(window).scroll(function () {            
             if ($(window).scrollTop() > menu_top) {  
                 $('header').addClass("fixed-desk");
@@ -11,37 +11,10 @@ $(document).ready(function() {
         });
     });
 
-    // if($(document).width() > 990 ? true : false){
-    //     $(function() {
-    //         menu_top = $('header').offset().top; 
-    //         $(window).scroll(function () {            
-    //             if ($(window).scrollTop() > menu_top) {  
-    //                 $('header').addClass("fixed-desk");
-    //             } else {                                 
-    //                 $('header').removeClass("fixed-desk");
-    //             }
-    //         });
-    //     });
-    // } else {
-    //     $(function() {
-    //         menu_top = $('.header-container').offset().top; 
-    //         $(window).scroll(function () {            
-    //           if ($(window).scrollTop() > menu_top) {  
-    //             if ($('.header-container').css('position') != 'fixed') { 
-    //                 $('.header-container').css('position','fixed');  
-    //                 $('.header-container').addClass("fixed-mob");
-    //                 $('main').addClass("main-top"); 
-    //             }
-    //           } else {                                 
-    //             if ($('.header-container').css('position') == 'fixed') {  
-    //               $('.header-container').css('position','');
-    //               $('.header-container').removeClass("fixed-mob");
-    //               $('main').removeClass("main-top"); 
-    //             }
-    //           }
-    //         });
-    //     });  
-    // }
+    $('.acc-head').on("click", function() {
+        $('.acc-body').not($(this).next()).slideUp(200).siblings(".acc-head").removeClass("acc-head-active").parent().removeClass("active-body");
+        $(this).toggleClass("acc-head-active").next().slideToggle(200).parent().toggleClass("active-body");
+    });
 
     $(".show-about-text").on("click", function(){
         $(".home-text").toggleClass("max");
@@ -114,6 +87,13 @@ $(document).ready(function() {
     $(".time").on("click", function(){
         $(this).attr('type','time');
     });
+
+    $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+        $(this)
+          .addClass('active').siblings().removeClass('active')
+          .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+    });
+      
 
     $('.popup-with-form').magnificPopup({
 		type: 'inline',

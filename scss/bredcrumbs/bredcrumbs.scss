@@ -1,0 +1,37 @@
+.bredcrumbs {
+    margin-bottom: 30px;
+    @media (max-width: 990px) {
+        margin-bottom: 20px;
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        li {
+            margin-right: 15px;
+            a,span{
+                color: #000;
+                font: 500 1rem 'Open Sans', sans-serif;
+                @media (max-width: 576px) {
+                    font: 500 .75rem 'Open Sans', sans-serif;
+                } 
+            }
+            a {
+                opacity: .5;
+                position: relative;
+                &::before {
+                    content: '/';
+                    position: absolute;
+                    right: -11px;
+                    @media (max-width: 576px) {
+                        top: 0;
+                        right: -9px;
+                    }
+                }
+            }
+            span {
+                opacity: 1;
+            }
+        }
+    }
+}

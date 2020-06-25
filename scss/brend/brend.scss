@@ -1,0 +1,36 @@
+.brend-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    @media (max-width: 990px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 700px) {
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+}
+
+.brend {
+    
+    .title-xl {
+        margin-bottom: 25px;
+    }
+}
+
+.brend-box {
+    position: relative;
+    img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .brend-title {
+        font: 500 1.2rem 'Oswald', sans-serif;
+        color: #000;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
+}

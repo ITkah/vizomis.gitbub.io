@@ -1,0 +1,44 @@
+.dostavka {
+    .title-xl {
+        margin-bottom: 25px;
+        @media (max-width: 990px) {
+            margin-bottom: 15px;
+        }
+    }
+    .dostavka-container {
+        background: #F3F3F3;
+        padding: 20px 0;
+        position: relative;
+        &::before {
+            content: '';
+            background: #F3F3F3;
+            position: absolute;
+            left: -50%;
+            width: 300%;
+            top: 0;
+            display: block;
+            height: 100%;
+        }
+    }
+    .text-simple {
+        margin-bottom: 20px;
+        padding-left: 25px;
+        position: relative;
+        z-index: 9;
+        @media (max-width: 990px) {
+            padding: 0;
+            margin-bottom: 15px;
+        }
+    }
+    .title-sm {
+        text-decoration-line: underline;
+        font: 600 1.2rem 'Oswald', sans-serif; 
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 9;
+        @media (max-width: 990px) {
+            margin-bottom: 10px;
+            font: 600 1.125rem 'Oswald', sans-serif; 
+        }
+    }
+}

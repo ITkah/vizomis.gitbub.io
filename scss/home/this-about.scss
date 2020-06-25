@@ -1,0 +1,106 @@
+.this-about {
+    position: relative;
+    &::before {
+        @media (max-width: 700px) {
+            content: '';
+            background: #F3F3F3;
+            height: 100%;
+            position: absolute;
+            left: -10%;
+            width: 650px;
+            display: block;
+        }   
+    }
+    .container {
+        background: #F3F3F3;
+        border-radius: 10px;
+        padding: 35px;
+        @media (max-width: 700px) {
+            padding: 20px 0;
+        }
+    }
+    .this-about-title {
+        font: 600 2.8rem 'Oswald', sans-serif; 
+        color: #000;
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+        z-index: 9;
+        @media (max-width: 990px) {
+            font: 600 1.56rem 'Oswald', sans-serif; 
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.this-about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+    position: relative;
+    z-index: 9;
+    @media (max-width: 990px) {
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 700px) {
+        overflow-x: scroll;
+        padding-bottom: 15px;
+    }
+    ::-webkit-scrollbar {
+        display:none;
+    }
+    @media (max-width: 700px) {
+        grid-template-columns: 180px 180px 180px;
+        background: #F3F3F3;
+    }
+    .this-about-box {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        background: #F3F3F3;
+        @media (max-width: 768px) {
+           align-items: center;
+        }
+    }
+    svg {
+        height: 92px;
+        margin-bottom: 30px;
+        @media (max-width: 1100px) {
+            height: 80px;
+            width: 80px;
+            margin-bottom: 20px;
+        }
+    }
+    img {
+        height: 92px;
+        margin-bottom: 30px;
+        @media (max-width: 1100px) {
+            height: 80px;
+            width: 80px;
+            margin-bottom: 20px;
+        }
+    }
+    .this-title {
+        margin-bottom: 10px;
+        font: 600 1.2rem 'Oswald', sans-serif; 
+        text-align: center;
+        @media (max-width: 990px) {
+            font-size: 1.125rem;
+        }
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+    }
+    .this-text {
+        font: 400 .95rem/22px 'Open Sans', sans-serif; 
+        text-align: center;
+        @media (max-width: 990px) {
+            font: 400 .75rem/18px 'Open Sans', sans-serif; 
+        }
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+    }
+}
