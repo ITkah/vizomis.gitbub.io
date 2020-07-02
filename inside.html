@@ -432,34 +432,35 @@
                 </div>
             </header>
             <main>
-                <section class="dostavka padding margin">
+                <div class="inside padding margin">
                     <div class="container">
-                        <h2 class="title-xl">Договор оферты</h2>
-                        <div class="dostavka-container">
-                            <p class="text-simple">
-                                Мы– сообщество фанатов! <br>
-                                Сообщество, которое посвящено исключительно брендам Dr. Martens.<br><br>
-                                Чем мы отличаемся от других интернет-магазинов?<br><br>
-                                Самый большой и внушительный ассортимент – наш ассортимент товаров Dr. Martens самый полноёмкий на территории СНГ!<br>
-                                Большинство моделей эксклюзивно представлены на территории Украины и России, так как мы сотрудничаем напрямую с прямым<br>
-                                поставщиком Dr. Martens и Vans, а не перекупщиками наиболее продаваемых моделей.<br>
-                            </p>
-                            <h3 class="title-sm">Способы оплаты</h3>
-                            <p class="text-simple">  
-                                У нас вы найдете обувь как из классических линеек, так и коллаборации бренда с другими производителями, в том числа и самые редкие<br>
-                                модели, которых по всем миру остается буквально несколько пар.<br><br>
-                                - Мы придерживаемся максимально низких цен на оригинальную продукцию (насколько это возможно для действительно оригинальной продукции), так как понимаем современные экономические реалии.<br><br>
-                                - Наша продукция исключительно оригинальна и поставляется напрямую из США.<br>
-                            </p>
-                            <h3 class="title-sm">Способы оплаты</h3>
-                            <p class="text-simple">
-                                - Мы доставим Вашу покупку совершенно бесплатно в Россию, Украину, Беларусь и Казахстан.<br><br>
-                                - Также есть возможность обсуждения доставки в любую точку Европы.<br><br>
-                                -Мы заботимся о Вас и сделаем все, чтобы покупки в нашем сообществе были удобными, быстрыми и приятными.
-                            </p>
+                        <div class="reg-wrap">
+                            <p class="title-xl">Вход в личный кабинет</p>
+                            <div class="radio old-user">
+                                <input type="radio" name="user" id="user-1" checked>
+                                <label for="user-1">Я новый пользователь</label>
+                            </div>
+                            <div class="radio new-user">
+                                <input type="radio" name="user" id="user-2">
+                                <label for="user-2">У меня есть аккаунт</label>
+                            </div>
+                            <form class="inside-form">
+                                <input type="email" placeholder="E-mail" class="simple-input" name="e-mail-reg" required>
+                                <input type="password" placeholder="Пароль" class="simple-input"  name="password-reg" required>
+                                <button type="submit">Войти</button>
+                            </form> 
+                            <form class="reg-form">
+                                <input type="text" placeholder="Фамилия" class="simple-input" name="surname" required>
+                                <input type="text" placeholder="Имя" class="simple-input" name="name" required>
+                                <input type="text" placeholder="Отчество" class="simple-input" name="surname-2" required>
+                                <input type="text" placeholder="Номер телефона" class="simple-input" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" name="phone" required>
+                                <input type="email" placeholder="E-mail" class="simple-input" name="e-mail-reg" required>
+                                <input type="password" placeholder="Пароль" class="simple-input"  name="password-reg" required>
+                                <button type="submit">зарегистрироваться</button>
+                            </form> 
                         </div>
                     </div>
-                </section>
+                </div>
             </main>
             <footer class="padding">
                 <div class="container">

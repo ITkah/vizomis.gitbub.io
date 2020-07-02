@@ -11,6 +11,41 @@ $(document).ready(function() {
         });
     });
 
+    $(".new-user").on("click", function(){
+        $(".reg-form").slideUp(150);
+        $(".inside-form").slideDown(150);
+    });
+
+    $(".old-user").on("click", function(){
+        $(".inside-form").slideUp(150);
+        $(".reg-form").slideDown(150);
+    });
+
+    $(".panel-bug-box").on("click", function(){
+        $(".modal-item-slider").slick('reinit');
+    });
+
+
+    if($(document).width() > 576 ? true : false){
+        console.log("desktop");
+    } else {
+        $(".data-title-box").on("click", function(){
+            $(this).children(".data-title").toggleClass("arrow-rotate");
+            $(this).next(".data-content-box").slideToggle(250);
+        });
+        $(".panel-title").on("click", function(){
+            $(this).toggleClass("arrow-rotate");
+            $(".panel-content").slideToggle(250);
+        });
+        $(".mob-change").on("click", function(){
+            $(this).siblings(".hide-element").toggleClass("show-element");
+        });
+    }
+
+    $(".data-change").on("click", function(){
+        $(this).parent().siblings(".data-content-box").children(".hide-element").toggleClass("show-element");
+    });
+
     $('.acc-head').on("click", function() {
         $('.acc-body').not($(this).next()).slideUp(200).siblings(".acc-head").removeClass("acc-head-active").parent().removeClass("active-body");
         $(this).toggleClass("acc-head-active").next().slideToggle(200).parent().toggleClass("active-body");
@@ -95,19 +130,20 @@ $(document).ready(function() {
     });
       
 
-    $('.popup-with-form').magnificPopup({
+    $('.popup-with-zoom-anim').magnificPopup({
 		type: 'inline',
+
+		fixedContentPos: false,
+		fixedBgPos: true,
+
+		overflowY: 'auto',
+
+		closeBtnInside: true,
 		preloader: false,
-		focus: '#name',
-		callbacks: {
-			beforeOpen: function() {
-				if($(window).width() < 700) {
-					this.st.focus = false;
-				} else {
-					this.st.focus = '#name';
-				}
-			}
-		}
+		
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in'
 	});
 
 });
