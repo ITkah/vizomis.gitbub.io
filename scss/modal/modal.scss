@@ -1,3 +1,219 @@
+.review-modal {
+    max-width: 975px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .1);
+    border-radius: 20px;
+    margin: 0 auto;
+    position: relative;
+    padding: 35px 60px;
+    @media (max-width: 990px) {
+        padding: 20px 25px;
+    }
+    .review-title {
+        margin-bottom: 25px;
+        text-align: center;
+        font: 600 1.875rem 'Oswald', sans-serif;
+        @media (max-width: 990px) {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+    }
+    form {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    textarea {
+        width: 100%;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 15px;
+        font: normal .95rem 'Open Sans', sans-serif;
+        height: 115px;
+        margin-bottom: 10px;
+    }
+    .input-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+        margin-bottom: 15px;
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            grid-gap: 15px;
+        }
+        input {
+            border: 1px solid #000;
+            box-sizing: border-box;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px 15px;
+            font: normal .95rem 'Open Sans', sans-serif;
+            @media (max-width: 576px) {
+                padding: 8px 12px;
+                font-size: .87rem;
+            }
+        }
+        ::-webkit-input-placeholder {color:#000;opacity: .5;}
+        ::-moz-placeholder          {color:#000;opacity: .5;}/* Firefox 19+ */
+        :-moz-placeholder           {color:#000;opacity: .5;}/* Firefox 18- */
+        :-ms-input-placeholder      {color:#000;opacity: .5;}
+    }
+    
+    .checkbox-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-bottom: 10px;
+        .checkbox-box:first-child {
+            label {
+                color: #00C71F;
+            }
+        }
+    }
+
+    .checkbox-box {
+        padding: 15px;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        border-radius: 5px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 15px;
+        .checkbox-title {
+            opacity: .5;
+            font: normal 1rem 'Open Sans', sans-serif;
+        }
+    }
+
+    .checkbox:last-child {
+        margin: 0;
+    }
+
+    .radio input[type="radio"] {
+        opacity: 0;
+        position: absolute;
+    }
+    
+    .radio label {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        padding-left: 30px;
+        font: normal .75rem/18px 'Open Sans', sans-serif;
+    }
+    
+    .radio label::before,
+    .radio label::after {
+        position: absolute;
+        content: "";
+        display: inline-block;
+    }
+    
+   
+    .radio label::before{
+        height: 19px;
+        width: 19px;
+        border: 1px solid #242324;
+        border-radius: 5px;
+        left: 0px;
+        top: -1px;
+    }
+    
+
+    .radio label::after {
+        height: 5px;
+        width: 10px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        transform: rotate(-45deg);
+        left: 5px;
+        top: 5px;
+    }
+    
+    .radio input[type="radio"] + label::after {
+        content: none;
+    }
+
+    .radio input[type="radio"]:checked + label::before {
+        background: #242324;
+    }
+    
+    .radio input[type="radio"]:checked + label::after {
+        content: "";
+    }
+    .btn-simple {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        width: 250px;
+        padding: 10px;
+        background: #242324;
+        border-radius: 5px;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        color: #FFE512;
+        font: 500 .95rem 'Oswald', sans-serif;
+        margin-bottom: 10px;
+        border: none;
+        transition: .3s;
+        cursor: pointer;
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    .rating-area {
+        overflow: hidden;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+        p {
+            font: 400 1rem 'Open Sans', sans-serif;
+            margin-right: 10px;
+            position: relative;
+            top: 2px;
+        }
+    }
+    .rating-area:not(:checked) > input {
+        display: none;
+    }
+    .rating-area:not(:checked) > label {
+        float: right;
+        width: 22px;
+        padding: 0;
+        cursor: pointer;
+        font-size: 22px;
+        line-height: 50px;
+        color: lightgrey;
+    }
+    .rating-area:not(:checked) > label:before {
+        content: '★';
+    }
+    .rating-area > input:checked ~ label {
+        color: gold;
+    }
+    .rating-area:not(:checked) > label:hover,
+    .rating-area:not(:checked) > label:hover ~ label {
+        color: gold;
+    }
+    .rating-area > input:checked + label:hover,
+    .rating-area > input:checked + label:hover ~ label,
+    .rating-area > input:checked ~ label:hover,
+    .rating-area > input:checked ~ label:hover ~ label,
+    .rating-area > label:hover ~ input:checked ~ label {
+        color: gold;
+    }
+    .rate-area > label:active {
+        position: relative;
+    }
+}
+
 .regestration {
     max-width: 540px;
     background: #fff;
@@ -696,13 +912,42 @@
 
 
 .mfp-bg {
-    background: rgba(205,205,205,.85);
+    background: rgba(205,205,205,.9);
+}
+
+
+
+.item-slide {
+    position: relative;
+    &::before {
+        position: fixed;
+        z-index: 99;
+        background: #fff;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+    }
+}
+
+.mfp-img-mobile {
+    background: #fff;
 }
 
 .slick-track {
     .slick-dots {
         display: none;
     }
+}
+
+.mfp-figure:after {
+    box-shadow: none;
+}
+
+.mfp-img-mobile .mfp-close {
+    background: transparent;
 }
 
 .page-modal {
@@ -825,4 +1070,225 @@
             grid-column-end: 3;
         }
     }
+}
+
+.item-slider-wrap {
+    transition: .3s;
+}
+
+
+
+.modal-item-slide {
+    .item-slider-wrap {
+        display: flex;
+        flex-direction: column-reverse;
+        .slider-nav {
+            display: block;
+        }
+    }
+}
+
+
+
+.mfp-figure {
+    .mfp-close {
+        &::before {
+            margin-left: auto;
+        }
+        top: 10px;
+        right: 5px;
+    }
+}
+
+.mfp-bottom-bar {
+    display: none;
+}
+
+/**
+ * Fade-zoom animation for first dialog
+ */
+
+/* start state */
+.my-mfp-zoom-in .zoom-anim-dialog {
+	opacity: 0;
+
+	-webkit-transition: all 0.2s ease-in-out; 
+	-moz-transition: all 0.2s ease-in-out; 
+	-o-transition: all 0.2s ease-in-out; 
+	transition: all 0.2s ease-in-out; 
+
+
+
+	-webkit-transform: scale(0.8); 
+	-moz-transform: scale(0.8); 
+	-ms-transform: scale(0.8); 
+	-o-transform: scale(0.8); 
+	transform: scale(0.8); 
+}
+
+/* animate in */
+.my-mfp-zoom-in.mfp-ready .zoom-anim-dialog {
+	opacity: 1;
+
+	-webkit-transform: scale(1); 
+	-moz-transform: scale(1); 
+	-ms-transform: scale(1); 
+	-o-transform: scale(1); 
+	transform: scale(1); 
+}
+
+/* animate out */
+.my-mfp-zoom-in.mfp-removing .zoom-anim-dialog {
+	-webkit-transform: scale(0.8); 
+	-moz-transform: scale(0.8); 
+	-ms-transform: scale(0.8); 
+	-o-transform: scale(0.8); 
+	transform: scale(0.8); 
+
+	opacity: 0;
+}
+
+/* Dark overlay, start state */
+.my-mfp-zoom-in.mfp-bg {
+	opacity: 0;
+	-webkit-transition: opacity 0.3s ease-out; 
+	-moz-transition: opacity 0.3s ease-out; 
+	-o-transition: opacity 0.3s ease-out; 
+	transition: opacity 0.3s ease-out;
+}
+/* animate in */
+.my-mfp-zoom-in.mfp-ready.mfp-bg {
+	opacity: 0.8;
+}
+/* animate out */
+.my-mfp-zoom-in.mfp-removing.mfp-bg {
+	opacity: 0;
+}
+
+
+
+/* start state */
+.my-mfp-zoom-in-2 .zoom-anim-dialog {
+	opacity: 0;
+
+	-webkit-transition: all 0.2s ease-in-out; 
+	-moz-transition: all 0.2s ease-in-out; 
+	-o-transition: all 0.2s ease-in-out; 
+	transition: all 0.2s ease-in-out; 
+
+
+
+	-webkit-transform: scale(0.8); 
+	-moz-transform: scale(0.8); 
+	-ms-transform: scale(0.8); 
+	-o-transform: scale(0.8); 
+	transform: scale(0.8); 
+}
+
+/* animate in */
+.my-mfp-zoom-in-2.mfp-ready .zoom-anim-dialog {
+	opacity: 1;
+
+	-webkit-transform: scale(1); 
+	-moz-transform: scale(1); 
+	-ms-transform: scale(1); 
+	-o-transform: scale(1); 
+	transform: scale(1); 
+}
+
+/* animate out */
+.my-mfp-zoom-in-2.mfp-removing .zoom-anim-dialog {
+	-webkit-transform: scale(0.8); 
+	-moz-transform: scale(0.8); 
+	-ms-transform: scale(0.8); 
+	-o-transform: scale(0.8); 
+	transform: scale(0.8); 
+
+	opacity: 0;
+}
+
+/* Dark overlay, start state */
+.my-mfp-zoom-in-2.mfp-bg {
+	opacity: 0;
+	-webkit-transition: opacity 0.3s ease-out; 
+	-moz-transition: opacity 0.3s ease-out; 
+	-o-transition: opacity 0.3s ease-out; 
+	transition: opacity 0.3s ease-out;
+}
+/* animate in */
+.my-mfp-zoom-in-2.mfp-ready.mfp-bg {
+	opacity: 0.8;
+}
+/* animate out */
+.my-mfp-zoom-in-2.mfp-removing.mfp-bg {
+	opacity: 0;
+}
+
+
+
+
+/**
+ * Fade-move animation for second dialog
+ */
+
+/* at start */
+.my-mfp-slide-bottom .zoom-anim-dialog {
+	opacity: 0;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+
+	-webkit-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+	-moz-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+	-ms-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+	-o-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+	transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+
+}
+
+/* animate in */
+.my-mfp-slide-bottom.mfp-ready .zoom-anim-dialog {
+	opacity: 1;
+	-webkit-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+	-moz-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+	-ms-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+	-o-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+	transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+}
+
+/* animate out */
+.my-mfp-slide-bottom.mfp-removing .zoom-anim-dialog {
+	opacity: 0;
+
+	-webkit-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+	-moz-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+	-ms-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+	-o-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+	transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+}
+
+/* Dark overlay, start state */
+.my-mfp-slide-bottom.mfp-bg {
+	opacity: 0;
+
+	-webkit-transition: opacity 0.3s ease-out; 
+	-moz-transition: opacity 0.3s ease-out; 
+	-o-transition: opacity 0.3s ease-out; 
+	transition: opacity 0.3s ease-out;
+}
+/* animate in */
+.my-mfp-slide-bottom.mfp-ready.mfp-bg {
+	opacity: 0.8;
+}
+/* animate out */
+.my-mfp-slide-bottom.mfp-removing.mfp-bg {
+	opacity: 0;
+}
+
+
+
+.my-mfp-zoom-in-2 {
+    background: #fff;
+    opacity: 1;
 }

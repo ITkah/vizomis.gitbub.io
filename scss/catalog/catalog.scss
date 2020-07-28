@@ -30,6 +30,8 @@
     }
 }
 
+
+
 .catalog-container {
     display: grid;
     grid-template-columns: 2fr 7fr;
@@ -182,6 +184,10 @@
 }
 
 .filter-wrap {
+    @media (max-width: 576px) {
+        overflow-y: scroll;
+        height: 450px;
+    }
     .filter-box {
         padding-bottom: 20px;
         margin-bottom: 10px;

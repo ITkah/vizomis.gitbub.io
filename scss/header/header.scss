@@ -11,9 +11,6 @@ header {
         box-shadow: 0px 4px 8px rgba(0, 0, 0, .05);
         margin-bottom: 15px;
     }
-    .container {
-        max-width: 1330px;
-    }
 }
 
 .lang-mob {
@@ -134,6 +131,7 @@ header {
         left: -0.25px;
     }
     @media (max-width: 1024px) {
+        right: 1px;
         left: -1px;
     }
 }
@@ -147,6 +145,9 @@ header {
     &:hover {
         .help-hide {
             display: block;
+            @media (max-width: 990px) {
+                display: none;
+            }
         }
     }
     .help-hide {
@@ -490,6 +491,9 @@ header {
         .bug-hide {
             display: block;
             z-index: 9999;
+            @media (max-width: 990px) {
+                display: none;
+            }
         }
     }
 }
@@ -657,7 +661,6 @@ header {
     width: 100vw;
     display: none;
 }
-
 
 
 nav {
@@ -896,6 +899,23 @@ nav {
                 }
             }
         }
+        li:last-child {
+            @media (max-width: 1366px) {
+                padding-right: 0;
+            }
+            @media (max-width: 1280px) {
+                padding: 0 30px;
+            }
+            @media (max-width: 1150px) {
+                padding: 0 20px;
+            }
+            @media (max-width: 990px) {
+                padding: 10px 20px;
+            }
+            @media (max-width: 360px) {
+                padding: 7px 20px;
+            }
+        }
         .brend {
             &::after {
                 opacity: 1;
@@ -916,7 +936,7 @@ nav {
         border-bottom: 1px solid #D0D0D0;
         z-index: 99;
     }
-    .favorite {
+    .favorite-icon {
         margin-right: 40px;
         position: relative;
         span {
@@ -1119,6 +1139,10 @@ nav {
     top: 0;
     left: 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, .05);
+    transition: .3s;
+    @media (max-width: 576px) {
+        top: -30px;
+    }
     .header-container {
         padding: 10px 0;
         @media (max-width: 990px) {

@@ -21,6 +21,7 @@
         width: 600px;
         box-sizing: border-box;
         margin: 0 auto;
+        flex-direction: column-reverse;
     }
     @media (max-width: 700px){
         width: 450px;
@@ -37,8 +38,21 @@
             margin-right: 40px;
         }
         @media (max-width: 990px) {
-            display: none;
-            margin: 0;
+            width: 600px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            height: 0px;
+            opacity: 0;
+            z-index: -9;
+        }
+        @media (max-width: 700px){
+            width: 450px;
+        }
+        @media (max-width: 576px) {
+            width: 300px;
+        }
+        @media (max-width: 350px) {
+            width: 280px;
         }
         .slider-box {
             display: flex;
@@ -46,10 +60,18 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            @media (max-width: 990px) {
+                padding: 0;
+                margin: 0 10px;
+            }
             img {
                 width: 105px;
                 height: 90px;
                 object-fit: contain;
+                @media (max-width: 990px) {
+                    width: 80px;
+                    height: 65px;
+                }
             }
         }
     }
@@ -62,6 +84,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        .slick-arrow {
+            opacity: 0;
+        }
+        .slick-dots {
+            opacity: 0;
+            @media (max-width: 990px) {
+                opacity: 1;
+            }
         }
         img {
             width: 485px;
@@ -244,7 +275,7 @@
             top: -3px;
         }
     }
-    .favorite {
+    .favorite-item {
         &::before {
             content: url(../img/icon/heart-big.svg);
             top: 1px;
@@ -324,6 +355,7 @@
         justify-content: center;
         flex-direction: column;
         margin-top: 20px;
+        padding-left: 30px;
     }
     a {
         font: normal 1rem 'Open Sans', sans-serif;
@@ -365,7 +397,7 @@
         box-sizing: border-box;
     }
     @media (max-width: 576px) {
-        height: 180px;
+        height: 220px;
     }
     video {
         height: 100%;
@@ -397,3 +429,135 @@
         margin-bottom: 25px;
     }
 }
+
+.item-description {
+    margin-bottom: 45px;
+    @media (max-width: 576px) {
+        margin-bottom: 0;
+    }
+    .container {
+        position: relative;
+    }
+    .text-simple {
+        @media (max-width: 576px) {
+            height: 200px;
+        }
+    }
+    .max {
+        height: 100%;
+    }
+    .show-about-text {
+        &::before {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 10%, #ffffff 40%);
+        }
+    }
+}
+
+.mfp-arrow-right:after {
+    border-left: none;
+}
+
+.mfp-arrow-left:after {
+    border-right: none;
+}
+
+.mfp-arrow-right:before {
+    border-left: 14px solid #000;
+    margin-left: 65px;
+}
+
+.mfp-arrow-left:before {
+    margin-left: 10px;
+    border-right: 14px solid #000;
+}
+
+.mfp-arrow:before {
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    opacity: 1;
+}
+
+img.mfp-img {
+    height: 350px;
+}
+
+
+
+.slider-item {
+    .item-slider-wrap {
+        margin: 0 auto;
+    }
+    .slick-dots {
+        @media (max-width: 990px) {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+    .item-slider-wrap .slider-for .slick-prev { 
+        left: -50%;
+    }
+    .item-slider-wrap .slider-for .slick-next { 
+        right: -54%;
+    }
+    .item-slider-wrap .slider-for .slick-prev {
+        transform: rotate(90deg);
+    }
+    .item-slider-wrap .slider-for .slick-next {
+        transform: rotate(-90deg);
+    }
+    .item-slider-wrap .slider-for .slick-prev:before {
+        content: '';
+        left: 20px; bottom: -20px; /* Положение треугольника */
+        border: 10px solid transparent; /* Прозрачные границы */
+        border-top: 10px solid #3F3F3F; /* Добавляем треугольник */
+    }
+    .item-slider-wrap .slider-for .slick-next:before {
+        content: '';
+        left: 20px; bottom: -20px; /* Положение треугольника */
+        border: 10px solid transparent; /* Прозрачные границы */
+        border-top: 10px solid #3F3F3F; /* Добавляем треугольник */
+    }
+    .slick-arrow {
+        @media (max-width: 990px) {
+            opacity: 0;
+        }
+    }
+    .slider-nav {
+        opacity: 0;
+        position: absolute;
+        @media (max-width: 990px) {
+            height: auto;
+            position: relative;
+            opacity: 1;
+            z-index: 9;
+        }
+    }
+    .slider-for {
+        @media (max-width: 576px) {
+            margin-top: 40px;
+        }
+        img {
+            @media (max-width: 576px) {
+                height: 300px;
+                width: 300px;
+            }
+            @media (max-width: 355px) {
+                height: 250px;
+                width: 280px;
+            }
+        }
+        .slick-arrow {
+            opacity: 1;
+            @media (max-width: 990px) {
+                opacity: 0;
+            }
+        }
+        .slick-dots {
+            opacity: 1;
+            @media (max-width: 990px) {
+                opacity: 0;
+            }
+        }
+    }
+}
+

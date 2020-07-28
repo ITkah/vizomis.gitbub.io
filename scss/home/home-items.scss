@@ -225,3 +225,43 @@
     }
 }
 
+
+.home-items-box {
+    position: relative;
+}
+
+
+.none-hover {
+    pointer-events: none;
+}
+
+.none-product {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(255,255,255,.7);
+    width: 100%;
+    height: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    .none-box {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+    }
+    p {
+        display: block;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-align: center;
+        border: 1px solid #000000;
+        font: normal .95rem 'Open Sans', sans-serif;
+        position: relative;
+        z-index: 99;
+    }
+}
