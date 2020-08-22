@@ -5502,8 +5502,7 @@ img.mfp-img {
 
 .personal-bug-wrap {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 10px; }
+  grid-template-columns: 1fr; }
   .personal-bug-wrap .bug-table-container:last-child {
     border: none; }
 
@@ -5513,16 +5512,11 @@ img.mfp-img {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center;
-  border-bottom: 1px solid #D0D0D0;
-  padding-bottom: 25px;
-  margin-bottom: 20px; }
+          align-items: center; }
   @media (max-width: 900px) {
     .bug-table-container {
       grid-template-columns: 1fr 1fr 1fr;
-      border: none;
-      padding-bottom: 0;
-      margin-bottom: 15px; } }
+      border: none; } }
   .bug-table-container .personal-bug-img {
     display: -webkit-box;
     display: -webkit-flex;
@@ -5558,21 +5552,47 @@ img.mfp-img {
             -ms-flex-pack: start;
                 justify-content: flex-start; } }
     .bug-table-container .personal-bug-img img {
-      width: 120px;
+      width: 100%;
+      max-width: 100%;
       height: 100px; }
       @media (max-width: 1280px) {
         .bug-table-container .personal-bug-img img {
           width: 100px;
           height: 80px; } }
+      @media (max-width: 990px) {
+        .bug-table-container .personal-bug-img img {
+          width: auto;
+          max-width: 100%;
+          height: 60px;
+          position: relative;
+          top: 5px; } }
+  .bug-table-container .bug-table-wrap .table-box:first-child {
+    display: none; }
+    @media (max-width: 990px) {
+      .bug-table-container .bug-table-wrap .table-box:first-child {
+        display: block; } }
   .bug-table-container .bug-table-wrap {
-    border-right: 1px solid #D0D0D0; }
+    border-right: 1px solid #D0D0D0;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
     @media (max-width: 900px) {
       .bug-table-container .bug-table-wrap {
-        border: none; } }
-  .bug-table-container .bug-table-wrap .table-box:first-child {
-    border-bottom: 1px solid #D0D0D0; }
-    @media (max-width: 900px) {
-      .bug-table-container .bug-table-wrap .table-box:first-child {
         border: none; } }
   .bug-table-container .bug-table-wrap .table-box {
     padding: 5px;
@@ -5638,13 +5658,26 @@ img.mfp-img {
         width: 100%;
         border-bottom: 1px solid #D0D0D0;
         margin-bottom: 10px;
-        padding: 5px 0; } }
+        padding: 5px 0;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between; } }
     @media (max-width: 900px) {
       .bug-table-container .bug-table-wrap:last-child .table-box {
         border: none;
         display: block;
         padding: 0;
-        margin-right: 15px; } }
+        margin-right: 15px;
+        width: 100%; } }
+    @media (max-width: 990px) {
+      .bug-table-container .bug-table-wrap:last-child .table-box:last-child .table-text-sm {
+        text-align: right; } }
   @media (max-width: 900px) {
     .bug-table-container .bug-table-wrap:nth-child(2) {
       grid-column-start: 2;
@@ -5652,7 +5685,20 @@ img.mfp-img {
       height: 100%;
       margin-bottom: 10px;
       border-bottom: 1px solid #D0D0D0;
-      padding-bottom: 9px; } }
+      padding-bottom: 9px;
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: end;
+      -webkit-align-items: flex-end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
   @media (max-width: 900px) {
     .bug-table-container .bug-table-wrap:nth-child(2) .table-box:first-child {
       display: none; } }
@@ -5664,7 +5710,17 @@ img.mfp-img {
           -ms-flex-pack: start;
               justify-content: flex-start;
       padding: 0;
-      padding-top: 10px; } }
+      padding-top: 10px;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: end;
+      -webkit-align-items: flex-end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+      position: relative;
+      bottom: -4px; } }
   @media (max-width: 900px) {
     .bug-table-container .bug-table-wrap:nth-child(3) {
       grid-column-start: 1;
@@ -5881,6 +5937,24 @@ img.mfp-img {
         width: 100%; } }
     .inside button:hover {
       color: #fff; }
+
+.but-table-title {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr 4fr 4fr 1fr; }
+  .but-table-title .table-title {
+    font: normal .87rem 'Open Sans', sans-serif;
+    text-align: center; }
+  @media (max-width: 990px) {
+    .but-table-title {
+      display: none; } }
+
+.table-box {
+  position: relative; }
+  .table-box .coll {
+    font: normal .8rem 'Open Sans', sans-serif;
+    color: #000;
+    position: relative;
+    left: -20px; }
 
 footer {
   background: #242324; }
@@ -6155,6 +6229,7 @@ footer {
     .copyrigt {
       font-size: .75rem; } }
 
+/*Правки опенкарт*/
 .not-found {
   margin-bottom: 45px; }
   @media (max-width: 576px) {
@@ -6220,7 +6295,7 @@ html, body {
   font-family: 'Open Sans', sans-serif; }
 
 .container {
-  max-width: 1260px;
+  max-width: 1200px;
   margin: 0 auto; }
 
 ul {
